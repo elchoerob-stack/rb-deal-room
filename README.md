@@ -25,6 +25,20 @@ at the Deeds Office.
 - **Trello import** — an exported board JSON comes across as its own board, keeping
   lists, cards, labels, due dates, members and checklists
 
+## Commission and paperwork
+
+Commission lives on the mandate, per deal: a percentage or a fixed fee, VAT
+inclusive or on top, split by percentage between the agency, the agent, a
+partner agency and a referring agent on a buyout. It is visible only to the
+principal, the deal's agent, and anyone named in a split — never to a
+purchaser, seller or attorney, on any screen or in any document they receive.
+
+Paperwork is filled in on screen, printed or saved as PDF, and signed where
+the law allows it. A mandate may be signed on screen; an Offer to Purchase
+may not — the ECT Act (s 4(4), Schedule 2) excludes agreements for the
+alienation of land from electronic signature — so the app offers signing on
+the one and prints hand-signing instructions on the other.
+
 ## On a phone
 
 The page installs to the home screen: `manifest.webmanifest`, a service worker

@@ -18,6 +18,19 @@ at the Deeds Office.
 - **Invitations** — a personal join link per party, per room, revocable at any time
 - **Team overview** — a principal's view of every agent, the pipeline, and the files
   that have stopped moving
+- **Board** — a kanban board shared by the team, where each card *is* a house or a
+  transfer and moves as its file moves; alongside cards the team writes themselves
+- **Today** — what needs you now: assignments, mentions, due cards, outstanding
+  steps, unread messages and offers waiting on an answer
+- **Trello import** — an exported board JSON comes across as its own board, keeping
+  lists, cards, labels, due dates, members and checklists
+
+## On a phone
+
+The page installs to the home screen: `manifest.webmanifest`, a service worker
+(`sw.js`, network-first for pages) and the icon set. Once installed it opens
+without browser chrome, keeps working with no signal, and offers Today and Board
+as home-screen shortcuts.
 
 ## Running it
 

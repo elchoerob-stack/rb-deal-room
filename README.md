@@ -37,6 +37,25 @@ as home-screen shortcuts.
 `index.html` is entirely self-contained — no build step, no server, no dependencies.
 Open the file in any browser, or serve the folder statically.
 
+## Team sync (optional)
+
+Without `config.js` the app keeps everything on the device it was typed on.
+To share a workspace between phones and between team members:
+
+1. Create a Firebase project and add a **Web app** to it.
+2. Enable **Authentication → Google** and **Firestore Database**.
+3. Copy `config.example.js` to `config.js` and paste the web config in.
+   `config.js` is git-ignored; the web config identifies the project and
+   grants nothing on its own.
+4. Publish `firestore.rules` (Firestore → Rules → paste → Publish).
+5. Sign each person in once, then add a document `staff/<their Auth UID>`
+   in the console. Only listed staff can read or write anything.
+
+Each card, house and transfer is one document, so two people editing
+different things never collide; within one document the newer revision
+wins. Writes are debounced, and the left rail shows the current state:
+on this device / connecting / synced / offline.
+
 ## Publishing
 
 GitHub Pages, source: branch `main`, folder `/ (root)`.

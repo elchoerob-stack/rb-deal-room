@@ -1,0 +1,38 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // The deal room holds client personal information: FICA references,
+    // contact details, offers and transfer history. Unlike a family app,
+    // nothing here is world-readable. Access is by signed-in staff only,
+    // and staff are added by hand in the console — there is no path that
+    // lets a client promote themselves.
+
+    function isStaff() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/staff/$(request.auth.uid));
+    }
+
+    // Who may use the app. Create these documents yourself in the console —
+    // one per person, document ID = their Firebase Auth UID.
+    // Nobody can read the list, and nobody can write it from a client.
+    match /staff/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    // The agency's shared workspace: boards, cards, houses and transfers.
+    match /ws/{wsId}/{collection}/{docId} {
+      allow read: if isStaff();
+      allow create, update: if isStaff()
+        && request.resource.data.rev is number
+        && request.resource.data.keys().hasAll(['rev', 'body']);
+      allow delete: if isStaff();
+    }
+
+    // Anything not named above is closed.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

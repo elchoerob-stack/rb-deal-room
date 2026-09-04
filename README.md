@@ -23,7 +23,19 @@ at the Deeds Office.
 - **Today** — what needs you now: assignments, mentions, due cards, outstanding
   steps, unread messages and offers waiting on an answer
 - **Trello import** — an exported board JSON comes across as its own board, keeping
-  lists, cards, labels, due dates, members and checklists
+  lists, cards, labels, due dates, members and checklists. Prospecting cards
+  (a listing link, an erf and address, the owner's numbers and dated call
+  notes pasted in as text) are read back into structure: the owner gets a
+  Call and a WhatsApp button per number, the notes stay notes, and a card
+  under another agency's mandate carries the date that mandate lapses
+- **Mandate watch** — a house under someone else's sole mandate surfaces on Today
+  the fortnight before that mandate runs out, with the owner's number ready
+- **Prospect → house → deal room** — a card she has won becomes a house on the
+  Pipeline with the owner as seller; an offer on it opens a deal room with the
+  property and the seller already filled in. The card stays on its board, linked
+  both ways
+- **Staff & access** — an admin's screen: who is waiting to be let in, who has
+  access and at what level, and the roster the app knows as the team
 
 ## Commission and paperwork
 
@@ -58,12 +70,22 @@ To share a workspace between phones and between team members:
 
 1. Create a Firebase project and add a **Web app** to it.
 2. Enable **Authentication → Google** and **Firestore Database**.
-3. Copy `config.example.js` to `config.js` and paste the web config in.
-   `config.js` is git-ignored; the web config identifies the project and
-   grants nothing on its own.
+3. Put the web config in `config.js` (see `config.example.js`). It is
+   committed: the web config identifies the project and grants nothing on
+   its own — access is decided by the rules and the staff list.
 4. Publish `firestore.rules` (Firestore → Rules → paste → Publish).
-5. Sign each person in once, then add a document `staff/<their Auth UID>`
-   in the console. Only listed staff can read or write anything.
+5. **The first admin, by hand, once.** Open the live page, sign in with
+   Google, and the app leaves a request. In the console, Firestore → Data,
+   create collection `staff`, document ID = your Auth UID (Authentication →
+   Users), with fields `role: "admin"` and `as: "jacques"`. Reload.
+6. **Everyone after that, from inside the app.** Each person signs in once
+   and waits. The admin opens **Staff & access**, sees the request, picks
+   who they are in the app and their level (agent, principal, admin) and
+   approves. Access starts then and ends the moment they are removed.
+   To hand over, make the next admin an admin, then remove yourself.
+
+The signed-in person is one identity — the switcher is for the demo only
+and locks once a real sign-in is mapped.
 
 Each card, house and transfer is one document, so two people editing
 different things never collide; within one document the newer revision

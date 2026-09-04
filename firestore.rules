@@ -3,22 +3,36 @@ service cloud.firestore {
   match /databases/{database}/documents {
 
     // The deal room holds client personal information: FICA references,
-    // contact details, offers and transfer history. Unlike a family app,
-    // nothing here is world-readable. Access is by signed-in staff only,
-    // and staff are added by hand in the console — there is no path that
-    // lets a client promote themselves.
+    // contact details, offers and transfer history. Nothing here is
+    // world-readable. Access is by approved staff only.
+    //
+    // The door: a person signs in with Google and may leave one request,
+    // under their own uid. An admin turns that into a staff document.
+    // The first admin is created by hand in the console; after that the
+    // admin approves, changes and removes people from inside the app.
 
+    function signedIn() { return request.auth != null; }
+    function staffDoc() { return get(/databases/$(database)/documents/staff/$(request.auth.uid)); }
     function isStaff() {
-      return request.auth != null
-        && exists(/databases/$(database)/documents/staff/$(request.auth.uid));
+      return signedIn() && exists(/databases/$(database)/documents/staff/$(request.auth.uid));
+    }
+    function isAdmin() { return isStaff() && staffDoc().data.role == "admin"; }
+
+    // Who may use the app. A person may read their own entry (that is how
+    // the app knows it has been let in); an admin may read and manage all.
+    match /staff/{uid} {
+      allow get: if signedIn() && request.auth.uid == uid;
+      allow list: if isAdmin();
+      allow create, update: if isAdmin()
+        && request.resource.data.role in ["agent", "principal", "admin"];
+      allow delete: if isAdmin() && request.auth.uid != uid;   // nobody removes themselves
     }
 
-    // Who may use the app. Create these documents yourself in the console —
-    // one per person, document ID = their Firebase Auth UID.
-    // Nobody can read the list, and nobody can write it from a client.
-    match /staff/{uid} {
-      allow read: if request.auth != null && request.auth.uid == uid;
-      allow write: if false;
+    // Waiting at the door. Only your own request, only name and email.
+    match /requests/{uid} {
+      allow create, update: if signedIn() && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(["name", "email", "ts"]);
+      allow read, delete: if isAdmin();
     }
 
     // The agency's shared workspace: boards, cards, houses and transfers.

@@ -63,7 +63,35 @@ as home-screen shortcuts.
 `index.html` is entirely self-contained — no build step, no server, no dependencies.
 Open the file in any browser, or serve the folder statically.
 
-## Team sync (optional)
+## Signing in
+
+With a project configured, the app **opens on a sign-in page** and shows
+nothing of the agency's work — no navigation, no houses, no names — until
+Google says who you are and an admin has approved you. Someone signed in
+but not yet approved gets a page explaining that, not a broken app.
+Without `config.js` (the artifact preview) it opens on the sample data
+instead, which is the only place the sample data can now be reached.
+
+## Getting the team started
+
+- **Getting started** is a checklist on Today (and on Staff & access for
+  an admin) that reads real state and ticks itself off: import your board,
+  put a house on the books, open a deal room, set the fee, let a client in,
+  set your year. Each unfinished step has a button that goes there.
+- **How this works** explains every screen in plain language, per role,
+  and ends with an honest list of what the app does *not* do.
+- Adding someone to the roster **sends them nothing** — the screen says so,
+  and each row has a button that writes the invitation and hands it to
+  WhatsApp or your mail app for you to send.
+
+## Going live
+
+Everything seeded for the demo carries `demo:true`. It goes two ways: the
+first time an approved person signs in on a device, and deliberately from
+**Staff & access → Going live**, which also deletes it from the shared
+workspace. Anything the team has made stays.
+
+## Team sync
 
 Without `config.js` the app keeps everything on the device it was typed on.
 To share a workspace between phones and between team members:

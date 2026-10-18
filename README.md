@@ -51,6 +51,28 @@ may not — the ECT Act (s 4(4), Schedule 2) excludes agreements for the
 alienation of land from electronic signature — so the app offers signing on
 the one and prints hand-signing instructions on the other.
 
+## The look
+
+The page wears the agency's own identity, read off rbbrandrealestate.co.za
+rather than invented: navy `#242E43`, a deeper navy `#001429` behind it,
+slate `#39424C` for reading, cream `#FDFBF6` for the page, and a warm
+stone `#E6E1D5` for hairlines. The brand carries **no accent colour**, so
+the navy does the work an accent normally does — the selected screen, the
+primary button, a progress bar. On a dark screen the navy stops working
+as an accent, so that role passes to a warm stone `#D8CFBC`.
+
+Montserrat sets names and headings, Noto Sans does the reading, and Noto
+Sans Mono carries prices, erf numbers and reference codes so figures line
+up in a column. Corners are 4px. The mark is the agency's own lockup,
+embedded in the page as a data URI so it needs no network, navy on the
+white header and inverted to white when the screen goes dark; the crest
+alone is the app icon. Printed paperwork takes the same tokens, so a
+mandate handed to a seller and the screen it came from are plainly the
+same firm.
+
+The lockup here is a raster lifted off the website. Ask the designer for
+the original vector before any print work.
+
 ## On a phone
 
 The page installs to the home screen: `manifest.webmanifest`, a service worker

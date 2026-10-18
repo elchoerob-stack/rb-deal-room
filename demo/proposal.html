@@ -237,13 +237,134 @@
       <li class="no"><span><b>Automated WhatsApp sending.</b> Needs a paid WhatsApp Business account and approved
         message templates. About R2 000 to set up and a few cents a message. A separate decision, once the agency
         knows it wants it.</span></li>
-      <li class="no"><span><b>A feed from Property24 or Private Property.</b> Their export agreements are between
-        them and the agency. If you get one, wiring it in is quoted then.</span></li>
+      <li class="no"><span><b>Listing syndication to Property24 and Private Property.</b> Not in the price above —
+        but quoted in full in the next section, because you asked what it would take.</span></li>
       <li class="no"><span><b>Accounting integration.</b> The money screen tells an agent what is theirs; it is not
         a bookkeeping system and does not pretend to be.</span></li>
       <li class="no"><span><b>Anything with a new party in it</b> — a bank, a bond originator, a municipality —
         is new work and is quoted when you want it.</span></li>
     </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap wide">
+    <p class="eyebrow">Quoted separately</p>
+    <h2>Syndication: listings out, and leads back in</h2>
+    <p class="lead" style="margin-top:14px">You asked what it would take to feed listings to the portals directly —
+      to stop paying PropCon's R1&nbsp;870 and to own the leads that come back. Here is the honest answer, with the
+      part that does not work first.</p>
+
+    <div class="note" style="margin-top:22px"><div><b>It does not pay for itself on the PropCon saving.</b>
+      Dropping PropCon saves R1&nbsp;870 a month. A feed needs a server running on a schedule, which this app currently
+      does not — call it R450 a month in Google Cloud for the feed and the image hosting. So the real saving is about
+      <b>R1&nbsp;420 a month, or R17&nbsp;040 a year</b>. Against a R65&nbsp;000 build that is nearly four years to
+      break even, and against all three stages it is over seven. <b>If saving the R1&nbsp;870 is the reason, do not
+      build this.</b> Stay on PropCon for syndication and let the Deal&nbsp;Room do the transfer.</div></div>
+
+    <h3 style="margin-top:30px">The reason to build it is the leads</h3>
+    <div class="grid grid-2" style="margin-top:16px">
+      <div class="card">
+        <h4 style="margin-bottom:8px">How it works today</h4>
+        <p style="font-size:14px">A buyer enquires on Property24. The enquiry goes to the portal, then to whoever runs
+          your feed, then to an agent's inbox. By the time it reaches the agent it is an email. Nobody can say, at the
+          end of a quarter, which portal produced a <b>registered sale</b> — only which produced clicks.</p>
+        <p style="font-size:14px;margin-bottom:0">Whatever RB&nbsp;Brand spends on Property24 and Private Property each
+          month — and it is a great deal more than R1&nbsp;870 — that question is currently unanswerable.</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:8px">How it would work</h4>
+        <p style="font-size:14px">The enquiry lands in the Deal&nbsp;Room instead: stamped with the portal it came
+          from, attached to the house it was about, assigned to an agent, and on their <b>Today</b> screen within the
+          minute. It then travels the funnel that already exists on the agency screen — lead, mandate, offer, transfer,
+          registered.</p>
+        <p style="font-size:14px;margin-bottom:0">Six months in, <b>Where the business comes from</b> stops being a
+          guess and starts being a number: this portal produced eleven leads, two mandates and one registration worth
+          R41&nbsp;300 to the agency. That is what you are buying.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:30px">What actually has to be built</h3>
+    <p class="lead" style="margin-top:10px;margin-bottom:18px">Four pieces, and the first one is the one that catches
+      people out.</p>
+    <ol class="steps">
+      <li>
+        <div>
+          <span class="when">Approval · weeks, not code</span>
+          <h3>Getting admitted as a feed provider</h3>
+          <p><b>Private Property</b> publishes the route: you email <span class="mono">feeds@privateproperty.co.za</span>
+            and they send back the API document and the onboarding steps. It is offered to service providers to the
+            estate agent industry, so the agency's own system has to be accepted as one.</p>
+          <p style="margin-top:8px"><b>Property24 does not publish an API.</b> There is no developer portal to sign up
+            to — integration is an arrangement with them or with one of their approved providers, and the terms have to
+            be confirmed before a line is written. <b>This is the risk in the whole quote, and it is not mine to
+            control.</b> If they say no, stage 2 does not happen and you are not charged for it.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <span class="when">Build</span>
+          <h3>A feed service, which means a server</h3>
+          <p>Today the app is one file with no backend — part of why it is cheap to run and impossible to break. A feed
+            changes that: something has to wake on a schedule, build an XML document per portal in that portal's own
+            schema, and serve or push it. That is a small scheduled service in Google Cloud, and it is the R450 a month.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <span class="when">Build</span>
+          <h3>Images on the internet, and a mapping layer</h3>
+          <p>Portals fetch photographs by URL, so the houses need real image hosting — the app has none today. Then
+            every field has to be translated into each portal's own vocabulary: their property types, their listing
+            statuses, and their suburb codes, which are not your suburb names. Create, update, price change, withdrawn
+            and sold all have to travel correctly, or a sold house stays advertised.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <span class="when">Build</span>
+          <h3>Validation you can see</h3>
+          <p>A feed that silently drops four listings is worse than no feed, because nobody finds out until an owner
+            asks why their house is not on Property24. So: a screen that shows what went out, what was rejected and
+            why, and a message to the agent whose listing it was.</p>
+        </div>
+      </li>
+    </ol>
+
+    <h3 style="margin-top:30px">The quote</h3>
+    <div class="tbl" style="margin-top:14px">
+      <table>
+        <thead><tr><th>Stage</th><th>What you get</th><th class="n">Once-off</th><th class="n">Monthly</th></tr></thead>
+        <tbody>
+          <tr><td><b>1</b></td>
+            <td><b>Listings out to Private Property.</b> The feed service, image hosting, the mapping layer, the
+              validation screen, and the full sync — new, changed, withdrawn, sold. The documented portal, so the one
+              that can be committed to.</td>
+            <td class="n">R 65 000</td><td class="n">+R 450</td></tr>
+          <tr><td><b>2</b></td>
+            <td><b>Property24 added.</b> Their schema, their suburb codes, their rules, on top of the service stage 1
+              builds. <b>Conditional on them admitting the feed</b> — if they do not, this is not charged.</td>
+            <td class="n">R 28 000</td><td class="n">—</td></tr>
+          <tr><td><b>3</b></td>
+            <td><b>Leads in, attributed.</b> Enquiries land in the Deal Room stamped with their portal and their house,
+              assigned to an agent, on Today within the minute, and counted on the agency screen's funnel all the way
+              through to registration.</td>
+            <td class="n">R 42 000</td><td class="n">—</td></tr>
+          <tr style="background:var(--accent-soft)"><td><b>All three</b></td>
+            <td>Taken together rather than one at a time.</td>
+            <td class="n"><b>R 125 000</b></td><td class="n"><b>+R 450</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px;font-size:12.5px;color:var(--muted)">Stage 1 is about six weeks from the day Private
+      Property accepts the feed; stage 2 is three weeks from the day Property24 does, whenever that is; stage 3 is four
+      weeks and can run alongside either. All figures exclude VAT and are additional to Option A or Option B.</p>
+
+    <div class="note calm" style="margin-top:22px"><div><b>My advice, for what it is worth.</b> Take the Deal Room
+      first and leave PropCon alone — R1&nbsp;870 is a fair price for syndication and they do it well. Run six months.
+      If by then the agency screen has you asking which portal the good leads come from, build stage&nbsp;1 and
+      stage&nbsp;3 and skip stage&nbsp;2 until Property24 answers. Building all of it up front is spending
+      R125&nbsp;000 to answer a question you have not asked yet.</div></div>
   </div>
 </section>
 

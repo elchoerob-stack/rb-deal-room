@@ -36,6 +36,13 @@ at the Deeds Office.
   both ways
 - **Staff & access** — an admin's screen: who is waiting to be let in, who has
   access and at what level, and the roster the app knows as the team
+- **The agency** — the principal's numbers: how many agents, the funnel from a
+  name on a prospecting board through to a registered sale with the conversion
+  at each step, every agent's leads, mandates, offers, transfers and earnings,
+  which stage the files are stacking up at and how long each one actually takes
+  this agency against how long it should, where the business comes from and
+  what each source has banked, which suburbs carry the risk, and the mandates
+  about to run out. Counted off the files the team has made — nothing typed in
 
 ## Commission and paperwork
 

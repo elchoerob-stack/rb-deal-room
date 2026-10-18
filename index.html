@@ -728,63 +728,63 @@ const ALL_TASKS = STAGES.flatMap(s => s.tasks);
 
 /* ══ The agency's live files ════════════════════════════════════════ */
 const SEED_DEALS = [
-  { id:"d1", ref:"PTA-2501216", file:"VZK/T/4471", address:"34 Heron Street", area:"Olympus AH", city:"Pretoria East",
+  { id:"d1", ref:"PTA-2501216", file:"VZK/T/4471", source:"Show day", address:"34 Heron Street", area:"Olympus AH", city:"Pretoria East",
     price:2990000, deposit:299000, beds:3, baths:2, garages:2, erf:481, type:"House",
     agent:"charne", buyer:"thabo", seller:"marietjie", conveyancer:"elmarie", firm:"Van Zyl Kruger Inc., Menlyn",
     listing:"https://www.rbbrandrealestate.co.za/olympus-ah-house-for-sale-2501216",
     otpAgo:46, bondIn:12, stage:1, extra:["t1b","t1d","t1f"], lastAct:2,
     extras:[["natasha","copurchaser","joined"],["wayne","originator","joined"]], hero:"linear-gradient(145deg,#0C2E18,#2E8B57)" },
-  { id:"d2", ref:"PTA-2502487", file:"VZK/T/4390", address:"12 Willow Grove", area:"Equestria", city:"Pretoria East",
+  { id:"d2", ref:"PTA-2502487", file:"VZK/T/4390", source:"Property24", address:"12 Willow Grove", area:"Equestria", city:"Pretoria East",
     price:2099900, deposit:210000, beds:3, baths:2, garages:2, erf:null, type:"Townhouse",
     agent:"charne", buyer:"johan", seller:"ayesha", conveyancer:"elmarie", firm:"Van Zyl Kruger Inc., Menlyn",
     listing:"https://www.rbbrandrealestate.co.za/equestria-townhouse-for-sale-2502487",
     otpAgo:74, bondIn:null, stage:3, extra:["t3a","t3c"], lastAct:3, hero:"linear-gradient(145deg,#2B3550,#4A5878)" },
-  { id:"d3", ref:"HBP-2487416", file:"KB/T/2210", address:"7 Dam View Drive", area:"Kosmos", city:"Hartbeespoort",
+  { id:"d3", ref:"HBP-2487416", file:"KB/T/2210", source:"Referral — past client", address:"7 Dam View Drive", area:"Kosmos", city:"Hartbeespoort",
     price:3690000, deposit:500000, beds:4, baths:2, garages:2, erf:1085, type:"House",
     agent:"charne", buyer:"sipho", seller:"linda", conveyancer:"hannes", firm:"Kruger & Botha, Centurion",
     listing:"https://www.rbbrandrealestate.co.za/kosmos-house-for-sale-2487416",
     otpAgo:118, bondIn:null, stage:5, extra:["t5a","t5b"], lastAct:5, hero:"linear-gradient(145deg,#0F2840,#1E5080)" },
-  { id:"d4", ref:"CEN-2495173", file:"KB/T/2178", address:"22 Wierda Crest", area:"Rooihuiskraal North", city:"Centurion",
+  { id:"d4", ref:"CEN-2495173", file:"KB/T/2178", source:"Board / walk-in", address:"22 Wierda Crest", area:"Rooihuiskraal North", city:"Centurion",
     price:1295000, deposit:130000, beds:2, baths:1, garages:2, erf:null, type:"Townhouse",
     agent:"lerato", buyer:"dawid", seller:"nomsa", conveyancer:"hannes", firm:"Kruger & Botha, Centurion",
     listing:"https://www.rbbrandrealestate.co.za/rooihuiskraal-north-townhouse-for-sale-2495173",
     otpAgo:141, bondIn:null, stage:6, extra:["t6a","t6b"], lastAct:4, hero:"linear-gradient(145deg,#0A2E2B,#1A6B64)" },
-  { id:"d5", ref:"PTA-2475568", file:"VZK/T/4455", address:"Stand 118, The Hills", area:"The Hills Estate", city:"Pretoria East",
+  { id:"d5", ref:"PTA-2475568", file:"VZK/T/4455", source:"Referral — another agent", address:"Stand 118, The Hills", area:"The Hills Estate", city:"Pretoria East",
     price:2000000, deposit:200000, beds:0, baths:0, garages:0, erf:940, type:"Vacant Land",
     agent:"rassie", buyer:"gerhard", seller:"susan", conveyancer:"elmarie", firm:"Van Zyl Kruger Inc., Menlyn",
     listing:"https://www.rbbrandrealestate.co.za/the-hills-game-reserve-estate-vacant-land-residential-for-sale-2475568",
     otpAgo:39, bondIn:-3, stage:2, extra:[], lastAct:17, hero:"linear-gradient(145deg,#0F3018,#1A6030)" },
-  { id:"d6", ref:"PTA-2487360", file:"KB/T/2195", address:"Unit 14, Glevera", area:"Rietvalleirand", city:"Pretoria East",
+  { id:"d6", ref:"PTA-2487360", file:"KB/T/2195", source:"Property24", address:"Unit 14, Glevera", area:"Rietvalleirand", city:"Pretoria East",
     price:1150000, deposit:115000, beds:1, baths:1, garages:0, erf:null, type:"Apartment",
     agent:"pieter", buyer:"willem", seller:"elize", conveyancer:"hannes", firm:"Kruger & Botha, Centurion",
     listing:"https://www.rbbrandrealestate.co.za/rietvalleirand-apartment-for-sale-2487360",
     otpAgo:96, bondIn:null, stage:4, extra:["t4a"], lastAct:11, hero:"linear-gradient(145deg,#1A3530,#3A7060)" },
-  { id:"d7", ref:"PTA-2489107", file:"VZK/T/4301", address:"5 Acacia Close", area:"Equestria", city:"Pretoria East",
+  { id:"d7", ref:"PTA-2489107", file:"VZK/T/4301", source:"Referral — past client", address:"5 Acacia Close", area:"Equestria", city:"Pretoria East",
     price:1250000, deposit:125000, beds:2, baths:2, garages:2, erf:null, type:"Townhouse",
     agent:"charne", buyer:"karin", seller:"andre", conveyancer:"elmarie", firm:"Van Zyl Kruger Inc., Menlyn",
     listing:"https://www.rbbrandrealestate.co.za/equestria-townhouse-for-sale-2489107",
     otpAgo:132, bondIn:null, stage:8, extra:[], lastAct:9, hero:"linear-gradient(145deg,#2E1A10,#6B4028)" },
-  { id:"d8", ref:"PTA-2500406", file:"VZK/T/4372", address:"9 Rooibos Lane", area:"Equestria", city:"Pretoria East",
+  { id:"d8", ref:"PTA-2500406", file:"VZK/T/4372", source:"Canvassing — Property24", address:"9 Rooibos Lane", area:"Equestria", city:"Pretoria East",
     price:1220000, deposit:122000, beds:2, baths:1, garages:1, erf:null, type:"Townhouse",
     agent:"charne", buyer:"hendrik", seller:"annelie", conveyancer:"elmarie", firm:"Van Zyl Kruger Inc., Menlyn",
     listing:"https://www.rbbrandrealestate.co.za/equestria-townhouse-for-sale-2500406",
     otpAgo:88, bondIn:null, stage:4, extra:["t4a","t4b"], lastAct:6, hero:"linear-gradient(145deg,#5A2D0C,#B86830)" },
-  { id:"d9", ref:"PTA-2500347", file:"KB/T/2203", address:"3 Aloe Corner", area:"Equestria", city:"Pretoria East",
+  { id:"d9", ref:"PTA-2500347", file:"KB/T/2203", source:"Private Property", address:"3 Aloe Corner", area:"Equestria", city:"Pretoria East",
     price:860000, deposit:86000, beds:2, baths:1, garages:1, erf:null, type:"Townhouse",
     agent:"pieter", buyer:"zanele", seller:"kobus", conveyancer:"hannes", firm:"Kruger & Botha, Centurion",
     listing:"https://www.rbbrandrealestate.co.za/equestria-townhouse-for-sale-2500347",
     otpAgo:79, bondIn:null, stage:4, extra:["t4a"], lastAct:19, hero:"linear-gradient(145deg,#1A2E5A,#3A5A9A)" },
-  { id:"d10", ref:"PTA-2496042", file:"VZK/T/4418", address:"27 Fiscal Street", area:"Equestria", city:"Pretoria East",
+  { id:"d10", ref:"PTA-2496042", file:"VZK/T/4418", source:"Show day", address:"27 Fiscal Street", area:"Equestria", city:"Pretoria East",
     price:1450000, deposit:145000, beds:2, baths:2, garages:0, erf:null, type:"Townhouse",
     agent:"lerato", buyer:"fatima", seller:"deon", conveyancer:"elmarie", firm:"Van Zyl Kruger Inc., Menlyn",
     listing:"https://www.rbbrandrealestate.co.za/equestria-townhouse-for-sale-2496042",
     otpAgo:63, bondIn:null, stage:3, extra:["t3a","t3b","t3c"], lastAct:2, hero:"linear-gradient(145deg,#3A1035,#7B3068)" },
-  { id:"d11", ref:"PTA-2475037", file:"VZK/T/4344", address:"Stand 96, The Hills", area:"The Hills Estate", city:"Pretoria East",
+  { id:"d11", ref:"PTA-2475037", file:"VZK/T/4344", source:"Repeat client", address:"Stand 96, The Hills", area:"The Hills Estate", city:"Pretoria East",
     price:2200000, deposit:220000, beds:0, baths:0, garages:0, erf:863, type:"Vacant Land",
     agent:"charne", buyer:"lindiwe", seller:"marius", conveyancer:"elmarie", firm:"Van Zyl Kruger Inc., Menlyn",
     listing:"https://www.rbbrandrealestate.co.za/the-hills-game-reserve-estate-vacant-land-residential-for-sale-2475037",
     otpAgo:102, bondIn:null, stage:4, extra:["t4a","t4b","t4c"], lastAct:8, hero:"linear-gradient(145deg,#1A2A10,#3A5A20)" },
-  { id:"d12", ref:"PTA-2479682", file:"KB/T/2231", address:"41 Simon Vermooten Road", area:"Equestria", city:"Pretoria East",
+  { id:"d12", ref:"PTA-2479682", file:"KB/T/2231", source:"Referral — another agent", address:"41 Simon Vermooten Road", area:"Equestria", city:"Pretoria East",
     price:2800000, deposit:280000, beds:3, baths:3, garages:2, erf:null, type:"House",
     agent:"rassie", buyer:"chantal", seller:"themba", conveyancer:"hannes", firm:"Kruger & Botha, Centurion",
     listing:"https://www.rbbrandrealestate.co.za/equestria-house-for-sale-2479682",
@@ -892,7 +892,7 @@ const SEED_LISTINGS = [
     price:1895000, type:"House", beds:3, baths:2, garages:2, erf:702, agent:"charne", seller:"riana", listedAgo:23,
     desc:"North-facing family home in a quiet cul-de-sac. Open-plan living onto a covered patio and built-in braai, established garden, solar geyser and a double garage with direct access.",
     hero:"linear-gradient(145deg,#0C2E18,#2E8B57)", listing:"https://www.rbbrandrealestate.co.za/",
-    shared:["gallery","floor","rates","erf"],
+    source:"Canvassing — Property24", shared:["gallery","floor","rates","erf"],
     prospects:[["sizwe","joined",12,"copurchaser"],["elandri","joined",6,null],["ruan","invited",2,null]],
     viewings:[[-9,"sizwe"],[-4,"elandri"],[3,null],[6,null]],
     offers:[["sizwe",1830000,183000,"submitted",2,"Subject to bond approval of R1 647 000 within 21 days. Occupation on registration."]] },
@@ -900,24 +900,40 @@ const SEED_LISTINGS = [
     price:1090000, type:"Townhouse", beds:2, baths:1, garages:1, erf:null, agent:"charne", seller:"douglas", listedAgo:11,
     desc:"Low-maintenance ground-floor unit in a secure complex with a communal pool. Ideal first purchase or rental investment, walking distance from Equestria shops.",
     hero:"linear-gradient(145deg,#5A2D0C,#B86830)", listing:"https://www.rbbrandrealestate.co.za/",
-    shared:["gallery","floor","levy"],
+    source:"Board / walk-in", shared:["gallery","floor","levy"],
     prospects:[["precious","joined",4,null]],
     viewings:[[-2,"precious"],[4,null]], offers:[] },
   { id:"l3", ref:"RB-2503240", address:"15 Duiker Street", area:"Garsfontein", city:"Pretoria East",
     price:3150000, type:"House", beds:4, baths:3, garages:3, erf:1240, agent:"charne", seller:"yolanda", listedAgo:5,
     desc:"Substantial family home on 1 240m², flatlet with its own entrance, borehole and full solar backup. Walking distance from Garsfontein Primary.",
     hero:"linear-gradient(145deg,#0F2840,#1E5080)", listing:"https://www.rbbrandrealestate.co.za/",
-    shared:["gallery"],
+    source:"Referral — past client", shared:["gallery"],
     prospects:[["jaco","invited",1,null]], viewings:[[2,null],[5,null]], offers:[] },
+  { id:"l5", ref:"RB-2489107", address:"5 Acacia Close", area:"Equestria", city:"Pretoria East",
+    price:1250000, type:"Townhouse", beds:2, baths:2, garages:2, erf:null, agent:"charne", seller:"andre", listedAgo:168,
+    desc:"Secure two-bedroom unit with a private courtyard, a short walk from Equestria shops.",
+    hero:"linear-gradient(145deg,#2E1A10,#6B4028)", listing:"https://www.rbbrandrealestate.co.za/",
+    source:"Referral — past client", shared:["gallery","floor","rates"],
+    prospects:[["karin","joined",150,null]], viewings:[[-146,"karin"]],
+    offers:[["karin",1250000,125000,"accepted",144,"Subject to bond approval within 21 days."]],
+    deal:"d7", state:"sold" },
+  { id:"l6", ref:"RB-2502487", address:"12 Willow Grove", area:"Equestria", city:"Pretoria East",
+    price:2099900, type:"Townhouse", beds:3, baths:2, garages:2, erf:null, agent:"charne", seller:"ayesha", listedAgo:104,
+    desc:"Three-bedroom duplex in a managed complex, north-facing patio and a double garage.",
+    hero:"linear-gradient(145deg,#2B3550,#4A5878)", listing:"https://www.rbbrandrealestate.co.za/",
+    source:"Property24", shared:["gallery","floor","levy"],
+    prospects:[["johan","joined",88,null]], viewings:[[-84,"johan"]],
+    offers:[["johan",2099900,210000,"accepted",76,"Cash purchase, no bond condition."]],
+    deal:"d2", state:"under_offer" },
   { id:"l4", ref:"RB-2450016", address:"3 Melkbos Street", area:"Wapadrand", city:"Pretoria East",
     price:2450000, type:"House", beds:3, baths:2, garages:2, erf:880, agent:"lerato", seller:"frik", listedAgo:34,
     desc:"Ridge-facing home with mountain views, open-plan kitchen and a self-contained cottage let on a month-to-month basis.",
     hero:"linear-gradient(145deg,#1A2A10,#3A5A20)", listing:"https://www.rbbrandrealestate.co.za/",
-    shared:["gallery","floor"], prospects:[], viewings:[[3,null]], offers:[] },
+    source:"Show day", shared:["gallery","floor"], prospects:[], viewings:[[3,null]], offers:[] },
 ];
 function buildListing(L){
-  const st = { demo:true, meta:{ ...L }, status:"active", dealId:null, pack:{}, log:[], visitors:[],
-    mandateEnds:iso(d0(90 - L.listedAgo)), source:L.source || "",
+  const st = { demo:true, meta:{ ...L }, status:L.state || "active", dealId:L.deal || null, pack:{}, log:[], visitors:[],
+    mandateEnds:iso(d0(90 - L.listedAgo)), source:L.source || "", fromCard:PROSPECT_WON[L.id] || null,
     prospects:L.prospects.map(([person, status, agoD, preset]) => ({ person, status, preset:preset || null,
       ts:iso(d0(-agoD)), token:token() })),
     viewings:L.viewings.map(([inD, person], i) => { const w = d0(inD);       // real show slots, not whatever o'clock it is now
@@ -937,6 +953,69 @@ function buildListing(L){
   return st;
 }
 
+/* ══ The prospecting board ══════════════════════════════════════════
+   What an agent's canvassing actually looks like once it is here: a
+   board of houses she is working on, each with the owner and their
+   numbers, the calls she has made, and — on the ones she has won — the
+   link to the house it became. This is the shape a Trello import
+   arrives in, seeded so the agency screen has a real chain to count
+   rather than an empty first row. ════════════════════════════════ */
+const PROSPECT_LISTS = [
+  { id:"p_call",  name:"To call" },
+  { id:"p_back",  name:"Called — follow up" },
+  { id:"p_seen",  name:"Appointment set" },
+  { id:"p_their", name:"Under another mandate" },
+  { id:"p_won",   name:"Mandate won" },
+  { id:"p_lost",  name:"Lost" },
+];
+/* [list, title, suburb, erf, owner, number, notes, agent, dueIn, mandateEndsIn, becameListing] */
+const SEED_PROSPECTS = [
+  ["p_won", "8 Kiepersol Avenue", "Faerie Glen", "702", "Riana Beukes", "0825550301",
+   "14/02 Phoned — selling to be closer to the grandchildren in Centurion.\n21/02 Walked the house. Wants R1.95m, I said R1.895m.\n02/03 Signed a sole mandate, 90 days.", "charne", null, null, "l1"],
+  ["p_won", "Unit 7, Silver Oaks", "Equestria", null, "Douglas Whitfield", "0835550302",
+   "26/02 Tenant moving out end of March, owner wants it listed before then.\n05/03 Mandate signed — he is keeping the stove.", "charne", null, null, "l2"],
+  ["p_won", "15 Duiker Street", "Garsfontein", "1240", "Yolanda Mbeki", "0715550303",
+   "08/03 Referral from the Kiepersol seller.\n12/03 Met at the house. Borehole and full solar — worth the asking price.\n13/03 Signed.", "charne", null, null, "l3"],
+  ["p_won", "3 Melkbos Street", "Wapadrand", "880", "Frik van Wyk", "0825550304",
+   "19/02 Cottage is let month to month, he will give notice on offer.\n24/02 Mandate signed at R2.45m.", "lerato", null, null, "l4"],
+  ["p_won", "5 Acacia Close", "Equestria", null, "André Venter", "0815550182",
+   "Referral from a client I sold for in 2023.\nMandate signed, sold to Karin Smit within the fortnight. Registered.", "charne", null, null, "l5"],
+  ["p_won", "12 Willow Grove", "Equestria", null, "Ayesha Patel", "0735550155",
+   "Property24 enquiry on the Acacia Close listing — she was the neighbour and asked me to value hers too.\nMandate signed. Cash offer accepted, now in transfer.", "charne", null, null, "l6"],
+  ["p_seen", "41 Protea Road", "Faerie Glen", "556", "Hester Lombard", "0825550411",
+   "Valuation booked Thursday 15:00. She has had two other agents through — be ready on the price.", "charne", 3, null, null],
+  ["p_seen", "6 Wildevy Close", "Garsfontein", "1102", "Thys Pretorius", "0715550412",
+   "Showing the comparatives on Saturday morning. Wants to know what Duiker Street went for.", "rassie", 5, null, null],
+  ["p_back", "22 Sering Avenue", "Equestria", null, "Neo Mahlangu", "0765550413",
+   "11/03 Not ready — waiting on the bond approval for the new house.\n18/03 Ring back after month end.", "charne", 9, null, null],
+  ["p_back", "Unit 3, Olienhout Park", "Die Wilgers", null, "Marelize du Toit", "0845550414",
+   "Left a message twice. Try the landline in the mornings.", "rassie", 2, null, null],
+  ["p_back", "9 Kameeldoring Street", "Wapadrand", "914", "Pieter Grobler", "0835550415",
+   "Divorce — both names on the deed, needs them to agree first. Patient follow-up.", "lerato", 14, null, null],
+  ["p_their", "17 Boekenhout Street", "Faerie Glen", "688", "Sarel Jacobs", "0825550416",
+   "On with another agency since January. He was not happy about the show days.", "charne", null, 11, null],
+  ["p_their", "4 Rooiels Avenue", "Garsfontein", "1310", "Ntombi Zulu", "0715550417",
+   "Sole mandate elsewhere, lapses soon. She asked me to call the week before.", "rassie", null, 24, null],
+  ["p_call", "12 Swartbas Street", "Equestria", null, "", "",
+   "Board went up and came down again in six weeks — worth a knock.", "charne", 1, null, null],
+  ["p_call", "30 Taaibos Road", "Wapadrand", "733", "Johan Lategan", "0835550418",
+   "Neighbour mentioned they are emigrating in the new year.", "lerato", 4, null, null],
+  ["p_lost", "7 Kremetart Close", "Die Wilgers", null, "Annemarie Klopper", "0845550419",
+   "Listed with the agency on the corner. Their fee was lower. Try again in 90 days.", "charne", null, null, null],
+];
+const PROSPECT_WON = Object.fromEntries(SEED_PROSPECTS
+  .map(([, , , , , , , , , , became], i) => [became, "p" + (i + 1)]).filter(([k]) => k));
+const SEED_PROSPECT_CARDS = SEED_PROSPECTS.map(([list, title, suburb, erf, owner, phone, notes, agent, dueIn, mandIn, became], i) => ({
+  id:"p" + (i + 1), board:"prospect", list, title, desc:notes,
+  lead:{ erf, address:title, suburb, url:"", mandateEnds:mandIn === null ? null : iso(d0(mandIn)),
+    owners:owner ? [{ name:owner, phones:[{ n:phone, note:"" }], email:"" }] : [], raw:notes },
+  labels:list === "p_won" ? [{ name:"Mandate", col:"#1A6B3A" }] : list === "p_their" ? [{ name:"Theirs", col:"#8A6100" }] : [],
+  members:[agent], due:dueIn === null ? null : iso(d0(dueIn)), done:false, checklist:[], pos:i + 1,
+  files:[], comments:[], link:became ? { listing:became } : null,
+  activity:[{ who:agent, ts:iso(d0(-(18 - i))), what:"added this house to the board" },
+    ...(became ? [{ who:agent, ts:iso(d0(-(10 - i))), what:"won the mandate — now a house on the Pipeline" }] : [])],
+}));
+
 const SEED_CARDS = [
   { id:"c1", list:"market", title:"Order new photos for 15 Duiker Street", desc:"The current set was shot in winter — the garden looks bare. Book Andries for a morning shoot.",
     labels:["admin"], members:["charne"], dueIn:3, pos:1, checklist:[["Confirm with the owner", true], ["Book the photographer", false], ["Load the new set", false]] },
@@ -949,15 +1028,20 @@ const SEED_CARDS = [
 ];
 
 const SEED_RECEIPTS = () => {
-  const past = [[10, "PTA-2489107", "5 Acacia Close", 27400, "Referral — past client"],
-    [8, "PTA-2471900", "16 Sering Street", 41250, "Property24"],
-    [7, "PTA-2468221", "4 Karee Crescent", 33800, "Board / walk-in"],
-    [5, "PTA-2462014", "Unit 9, Bergsig", 19600, "Referral — past client"],
-    [4, "PTA-2455310", "31 Wag-'n-Bietjie", 52900, "Private Property"],
-    [2, "PTA-2448702", "7 Olienhout Avenue", 38150, "Show day"],
-    [1, "PTA-2441166", "22 Kameeldoring", 44300, "Repeat client"]];
-  return past.map(([ago2, ref, address, amount, source], i) => ({
-    id:"seed" + i, demo:true, who:"charne", deal:"past" + i, ref, address, amount, source,
+  const past = [[10, "PTA-2489107", "5 Acacia Close", 27400, "Referral — past client", "charne"],
+    [9, "PTA-2472881", "2 Rotsvy Street", 36900, "Show day", "rassie"],
+    [8, "PTA-2471900", "16 Sering Street", 41250, "Property24", "charne"],
+    [7, "PTA-2468221", "4 Karee Crescent", 33800, "Board / walk-in", "charne"],
+    [7, "PTA-2466104", "Unit 2, Mispel Hof", 21400, "Property24", "lerato"],
+    [5, "PTA-2462014", "Unit 9, Bergsig", 19600, "Referral — past client", "charne"],
+    [5, "PTA-2461330", "88 Vaalbos Road", 48700, "Referral — another agent", "rassie"],
+    [4, "PTA-2455310", "31 Wag-'n-Bietjie", 52900, "Private Property", "charne"],
+    [3, "PTA-2451208", "5 Swartstam Lane", 29850, "Canvassing — Property24", "lerato"],
+    [2, "PTA-2448702", "7 Olienhout Avenue", 38150, "Show day", "charne"],
+    [2, "PTA-2447015", "14 Doringboom Street", 31600, "Repeat client", "rassie"],
+    [1, "PTA-2441166", "22 Kameeldoring", 44300, "Repeat client", "charne"]];
+  return past.map(([ago2, ref, address, amount, source, who], i) => ({
+    id:"seed" + i, demo:true, who, deal:"past" + i, ref, address, amount, source,
     ts:iso(d0(-(ago2 * 30 + 4))) }));
 };
 
@@ -966,9 +1050,10 @@ const KEY = "rb_dealroom_v4";
 let S;
 const fresh = () => ({ me:"charne", view:"today", deal:null, listing:null, agentFilter:null, people:{}, prefill:null, staff:null, tour:{}, welcomed:{}, invited:{},
   card:null, send:null, form:null, signing:null, rev:{}, money:{}, receipts:SEED_RECEIPTS(), boardFilter:null, boardId:"pipeline",
-  boards:[{ id:"pipeline", name:"Pipeline", kind:"pipeline", owner:"charne", shared:["rassie"] }],
-  board:{ cards:SEED_CARDS.map(c => ({ ...c, demo:true, board:"pipeline", due:c.dueIn === undefined ? null : iso(d0(c.dueIn)),
-    checklist:c.checklist.map(x => [...x]) })), next:9 },
+  boards:[{ id:"pipeline", name:"Pipeline", kind:"pipeline", owner:"charne", shared:["rassie"] },
+    { id:"prospect", name:"Prospecting", kind:"board", owner:"charne", shared:["rassie", "lerato"], lists:PROSPECT_LISTS }],
+  board:{ cards:[...SEED_CARDS.map(c => ({ ...c, demo:true, board:"pipeline", due:c.dueIn === undefined ? null : iso(d0(c.dueIn)),
+    checklist:c.checklist.map(x => [...x]) })), ...SEED_PROSPECT_CARDS.map(c => ({ ...c, demo:true }))], next:9 },
   deals:Object.fromEntries(SEED_DEALS.map(D => [D.id, buildDeal(D)])),
   listings:Object.fromEntries(SEED_LISTINGS.map(L => [L.id, buildListing(L)])), nextRef:2600001 });
 function load(){ try { const r = localStorage.getItem(KEY); S = r ? JSON.parse(r) : fresh(); } catch { S = fresh(); }
@@ -1086,8 +1171,8 @@ function navItems(){
     if (canDocs()) v.push(DEAL_VIEWS_DOCS);
     return v; }
   const v = [], r = me().role;
-  if (r === "admin") v.push({ id:"staff", label:"Staff & access", short:"Staff", ic:"shield" }, { id:"team", label:"Team overview", short:"Team", ic:"team" }, { id:"board", label:"Board", short:"Board", ic:"board" }, { id:"listings", label:"All houses", short:"Houses", ic:"house" }, { id:"portfolio", label:"All deals", short:"Deals", ic:"deals" });
-  else if (r === "principal") v.push({ id:"today", label:"Today", short:"Today", ic:"home" }, { id:"money", label:"Money", short:"Money", ic:"key" }, { id:"earn", label:"Pipeline", short:"Pipeline", ic:"deals" }, { id:"board", label:"Board", short:"Board", ic:"board" }, { id:"team", label:"Team overview", short:"Team", ic:"team" }, { id:"listings", label:"All houses", short:"Houses", ic:"house" }, { id:"portfolio", label:"All deals", short:"Deals", ic:"deals" });
+  if (r === "admin") v.push({ id:"staff", label:"Staff & access", short:"Staff", ic:"shield" }, { id:"agency", label:"The agency", short:"Agency", ic:"track" }, { id:"team", label:"Team overview", short:"Team", ic:"team" }, { id:"board", label:"Board", short:"Board", ic:"board" }, { id:"listings", label:"All houses", short:"Houses", ic:"house" }, { id:"portfolio", label:"All deals", short:"Deals", ic:"deals" });
+  else if (r === "principal") v.push({ id:"today", label:"Today", short:"Today", ic:"home" }, { id:"agency", label:"The agency", short:"Agency", ic:"track" }, { id:"money", label:"Money", short:"Money", ic:"key" }, { id:"earn", label:"Pipeline", short:"Pipeline", ic:"deals" }, { id:"board", label:"Board", short:"Board", ic:"board" }, { id:"team", label:"Team overview", short:"Team", ic:"team" }, { id:"listings", label:"All houses", short:"Houses", ic:"house" }, { id:"portfolio", label:"All deals", short:"Deals", ic:"deals" });
   else {
     v.push({ id:"today", label:"Today", short:"Today", ic:"home" });
     if (r === "agent") v.push({ id:"money", label:"Money", short:"Money", ic:"key" },
@@ -1138,7 +1223,7 @@ function renderChrome(){
       <div class="track"><i style="width:${pctOf(d)}%"></i></div>
     </div>`
   : `<div style="min-width:0">
-      <h1>${S.view === "cal" ? "Diary" : S.view === "guide" ? "How this works" : S.view === "staff" ? "Staff & access" : S.view === "money" ? "Money" : S.view === "road" ? "The road to a home sale" : S.view === "docs" ? "Paperwork" : S.view === "earn" ? "Earnings" : S.view === "today" ? "Today" : S.view === "board" ? esc(curBoard().name) : S.view === "listings" ? (isPrincipal(S.me) ? "Every house on the books" : "My houses")
+      <h1>${S.view === "agency" ? "RB Brand — the agency" : S.view === "cal" ? "Diary" : S.view === "guide" ? "How this works" : S.view === "staff" ? "Staff & access" : S.view === "money" ? "Money" : S.view === "road" ? "The road to a home sale" : S.view === "docs" ? "Paperwork" : S.view === "earn" ? "Earnings" : S.view === "today" ? "Today" : S.view === "board" ? esc(curBoard().name) : S.view === "listings" ? (isPrincipal(S.me) ? "Every house on the books" : "My houses")
         : S.view === "new" ? "New deal room" : isPrincipal(S.me) ? "RB Brand — team overview" : me().role === "agent" ? "My deal rooms" : "My transfers"}</h1>
       <div class="ref mono">${me().name} · ${esc(me().org)}</div>
     </div>`;
@@ -1434,6 +1519,306 @@ function vStaff(){
 }
 
 /* ══ View: team overview (principal) ════════════════════════════════ */
+/* ══ The agency, in numbers ═════════════════════════════════════════
+   A principal's screen. Everything here is worked out from the files
+   the team has actually made — no figure is typed in and none is
+   estimated except the two that say so. Where the app has not been
+   given something (a lead source, a prospecting board) the screen says
+   so plainly instead of showing a zero that reads like a result. ═══ */
+
+/* Everyone the agency works through: whoever owns a deal, a house, or a
+   card, plus anyone on the roster the admin has set up. */
+function agencyRoster(){
+  const ids = new Set();
+  Object.values(S.deals).forEach(d => ids.add(d.meta.agent));
+  Object.values(S.listings).forEach(l => ids.add(l.meta.agent));
+  (S.board.cards || []).forEach(c => (c.members || []).forEach(m => ids.add(m)));
+  (S.staff || []).forEach(x => { if (x.role === "agent") ids.add(x.as); });
+  return [...ids].filter(id => P[id] && P[id].role === "agent" && !isPrincipal(id));
+}
+/* When a file reached a given stage, read off its own audit log. */
+const stageDoneAt = (d, n) => { const s = STAGES[n - 1];
+  const e = d.log.filter(x => x.act === "Stage complete" && x.det.startsWith(s.name)).pop();
+  return e ? e.ts : null; };
+const registeredAt = d => isClosed(d) ? (stageDoneAt(d, 7) || lastTouch(d)) : null;
+const daysToRegister = d => { const r = registeredAt(d);
+  return r ? Math.max(0, Math.round((new Date(r) - new Date(d.otpDate)) / DAY)) : null; };
+const leadCards = () => (S.board.cards || []).filter(c => c.lead);
+const pctOr = (a, b) => b > 0 ? Math.round(a / b * 100) : null;
+const med = xs => { if (!xs.length) return null; const s = [...xs].sort((a, b) => a - b), h = s.length >> 1;
+  return s.length % 2 ? s[h] : Math.round((s[h - 1] + s[h]) / 2); };
+
+function agencyStats(){
+  const deals = Object.values(S.deals), listings = Object.values(S.listings);
+  const live = deals.filter(d => !isClosed(d)), done = deals.filter(isClosed);
+  const cards = leadCards();
+  const ty = TAXYEAR(new Date());
+  const receipts = (S.receipts || []).filter(r => TAXYEAR(r.ts) === ty);
+
+  const agents = agencyRoster().map(id => {
+    const ds = deals.filter(d => d.meta.agent === id), ls = listings.filter(l => l.meta.agent === id);
+    const act = ds.filter(d => !isClosed(d)), reg = ds.filter(isClosed);
+    const myCards = cards.filter(c => (c.members || []).includes(id));
+    const offers = ls.reduce((n, l) => n + (l.offers || []).length, 0);
+    const banked = receipts.filter(r => r.who === id).reduce((n, r) => n + r.amount, 0);
+    const touched = [...ds.map(lastTouch), ...ls.map(l => (l.log[0] || {}).ts || null),
+      ...myCards.flatMap(c => (c.activity || []).map(a => a.ts))].filter(Boolean);
+    return { id, name:P[id].name, leads:myCards.length, mandates:ls.length,
+      won:myCards.filter(c => c.link && c.link.listing).length,
+      viewings:ls.reduce((n, l) => n + (l.viewings || []).filter(v => new Date(v.when || v.ts || 0) < Date.now()).length, 0),
+      offers, sales:ds.length, live:act.length, registered:reg.length,
+      pipeline:act.reduce((n, d) => n + d.meta.price, 0),
+      sold:reg.reduce((n, d) => n + d.meta.price, 0), banked,
+      risk:act.filter(atRisk).length,
+      last:touched.length ? touched.sort((a, b) => new Date(b) - new Date(a))[0] : null };
+  }).sort((a, b) => b.banked - a.banked || b.pipeline - a.pipeline);
+
+  /* The funnel follows the agency's own stock and nothing else, so that
+     each step is really a subset of the one above it: a name on a board
+     becomes a mandate, the mandate draws an offer, the offer opens a
+     transfer, the transfer registers. Work that arrived as a signed
+     offer on a house never on these books is counted apart — it is real
+     income, but it is not this chain, and folding it in would make the
+     conversions read better than they are. */
+  const withOffer = listings.filter(l => (l.offers || []).length);
+  const went = listings.filter(l => l.dealId && S.deals[l.dealId]);
+  const regd = went.filter(l => isClosed(S.deals[l.dealId]));
+  const funnel = [
+    { k:"Leads on the boards", n:cards.length, s:"Houses being prospected" },
+    { k:"Mandates won", n:listings.length, s:"Signed with you — on the market, under offer or sold" },
+    { k:"Drew an offer", n:withOffer.length, s:"At least one offer written" },
+    { k:"Went to transfer", n:went.length, s:"An offer was accepted" },
+    { k:"Registered", n:regd.length, s:"Ownership passed" },
+  ];
+  const offBook = deals.filter(d => !listings.some(l => l.dealId === d.meta.id));
+
+  const byStage = STAGES.map(s => { const ds = live.filter(d => current(d).n === s.n);
+    const sat = ds.map(d => { const got = s.n > 1 ? stageDoneAt(d, s.n - 1) : d.otpDate;
+      return got ? Math.round((Date.now() - new Date(got)) / DAY) : null; }).filter(x => x !== null);
+    return { s, n:ds.length, value:ds.reduce((n, d) => n + d.meta.price, 0), sat:med(sat), deals:ds }; });
+
+  /* How long each stage took on the files that are past it — the
+     agency's own times, not the textbook ones on the Road screen. */
+  const stageTook = STAGES.map(s => { const spans = deals.map(d => {
+      const got = stageDoneAt(d, s.n); if (!got) return null;
+      const from = s.n > 1 ? stageDoneAt(d, s.n - 1) : d.otpDate; if (!from) return null;
+      return Math.max(0, Math.round((new Date(got) - new Date(from)) / DAY)); }).filter(x => x !== null);
+    return { s, days:med(spans), n:spans.length }; });
+
+  const regDays = done.map(daysToRegister).filter(x => x !== null);
+  const sourceOf = l => l.source || "";
+  const srcMap = {};
+  listings.forEach(l => { const k = sourceOf(l); if (!k) return;
+    (srcMap[k] = srcMap[k] || { k, mandates:0, sales:0, banked:0 }).mandates++; });
+  deals.forEach(d => { const k = d.meta.source; if (!k) return;
+    (srcMap[k] = srcMap[k] || { k, mandates:0, sales:0, banked:0 }).sales++; });
+  receipts.forEach(r => { const k = r.source; if (!k) return;
+    (srcMap[k] = srcMap[k] || { k, mandates:0, sales:0, banked:0 }).banked += r.amount; });
+  const sources = Object.values(srcMap).sort((a, b) => b.banked - a.banked || b.mandates - a.mandates);
+  const noSource = listings.filter(l => !sourceOf(l)).length + deals.filter(d => !d.meta.source).length;
+
+  const areaMap = {};
+  deals.forEach(d => { const k = d.meta.area || "—";
+    const a = areaMap[k] = areaMap[k] || { k, n:0, value:0 }; a.n++; a.value += d.meta.price; });
+  const areas = Object.values(areaMap).sort((a, b) => b.value - a.value);
+
+  const stock = listings.filter(l => l.status === "active");
+  const expiring = stock.map(l => ({ l, n:dayDiff(l.mandateEnds) })).filter(x => x.n <= 30).sort((a, b) => a.n - b.n);
+
+  /* Commission the agency itself keeps, against what goes out to the
+     people who earned it. Only the net is split — VAT is never anyone's. */
+  const splitOf = kind => done.reduce((n, d) => n + commCalc(d).splits.filter(s => s.kind === kind)
+    .reduce((m, s) => m + s.amount, 0), 0);
+  const weighted = live.reduce((n, d) => n + commCalc(d).net * oddsOf(d), 0);
+
+  return { deals, listings, live, done, agents, funnel, byStage, stageTook, cards, offBook,
+    regDays:{ median:med(regDays), n:regDays.length },
+    sources, noSource, areas, stock, expiring, ty,
+    banked:receipts.reduce((n, r) => n + r.amount, 0),
+    house:splitOf("agency"), toAgents:splitOf("agent"), weighted,
+    pipeline:live.reduce((n, d) => n + d.meta.price, 0),
+    soldValue:done.reduce((n, d) => n + d.meta.price, 0),
+    attention:live.filter(atRisk) };
+}
+
+/* ══ View: the agency in numbers ════════════════════════════════════
+   What a principal asks at the end of a month: how many people do I
+   have, what are they bringing in, where do the files get stuck, what
+   did we earn, and where did any of it come from. Money is the owner's
+   alone — an admin gets the counts and none of the rands. ══════════ */
+function vAgency(){
+  const A = agencyStats(), money = isOwner(S.me);
+  const fmax = Math.max(1, ...A.funnel.map(f => f.n));
+  const smax = Math.max(1, ...A.byStage.map(b => b.n));
+  const emax = Math.max(1, ...A.agents.map(a => a.banked));
+  const conv = (a, b) => { const p = pctOr(a, b); return p === null ? "—" : p + "%"; };
+
+  return `<div class="stack">
+    <div class="sec-h"><h2>The agency</h2>
+      <p>${A.agents.length} agent${A.agents.length === 1 ? "" : "s"} · ${A.stock.length} house${A.stock.length === 1 ? "" : "s"} on the market · ${A.live.length} in transfer${money ? " · " + Rm(A.pipeline) + " of property" : ""}</p></div>
+
+    <div class="tiles">
+      <div class="tile"><div class="k">Agents</div><div class="v">${A.agents.length}</div>
+        <div class="s">${A.agents.filter(a => a.live > 0).length} with a live file${A.agents.filter(a => !a.last).length ? ` · ${A.agents.filter(a => !a.last).length} with nothing yet` : ""}</div></div>
+      <div class="tile"><div class="k">On the market</div><div class="v">${A.stock.length}</div>
+        <div class="s">${A.expiring.length ? `${A.expiring.length} mandate${A.expiring.length === 1 ? "" : "s"} ending within 30 days` : "No mandate ends this month"}${A.listings.length > A.stock.length ? ` · ${A.listings.length - A.stock.length} sold or under offer` : ""}</div></div>
+      <div class="tile"><div class="k">In transfer</div><div class="v">${A.live.length}</div>
+        <div class="s">${A.attention.length ? `${A.attention.length} not moving` : "all moving"}${money ? ` · ${Rm(A.pipeline)}` : ""}</div></div>
+      <div class="tile"><div class="k">Registered</div><div class="v">${A.done.length}</div>
+        <div class="s">${A.regDays.median !== null ? `${A.regDays.median} days from offer to registration` : "none yet"}</div></div>
+      ${money ? `<div class="tile"><div class="k">Banked ${A.ty}/${String(A.ty + 1).slice(2)}</div><div class="v">${Rm(A.banked)}</div>
+        <div class="s">Commission paid out on registration</div></div>
+      <div class="tile"><div class="k">Still to come</div><div class="v">${Rm(A.weighted)}</div>
+        <div class="s">Live files, weighted by stage</div></div>` : ""}
+    </div>
+
+    <div class="card">
+      <div class="card-h">${ICON.track}<h2>Lead to registration</h2><span class="chip c-mute">Everything on the books today</span></div>
+      <div class="card-b">
+        <div class="chart">${A.funnel.map((f, i) => {
+          const prev = i ? A.funnel[i - 1] : null;
+          return `<button class="crow" data-empty="${f.n ? 0 : 1}" data-tiptitle="${esc(f.k)}"
+            data-tip="${esc(f.s + (prev ? ` · ${conv(f.n, prev.n)} of ${prev.k.toLowerCase()}` : ""))}">
+            <span class="cl">${f.k}</span>
+            <span class="cbar"><i style="width:${f.n / fmax * 100}%"></i></span>
+            <span class="cv">${f.n}</span></button>`; }).join("")}</div>
+        <div class="tiles" style="margin-top:14px">
+          <div class="tile"><div class="k">Lead → mandate</div><div class="v">${conv(A.funnel[1].n, A.funnel[0].n)}</div><div class="s">Prospects that signed with you</div></div>
+          <div class="tile"><div class="k">Mandate → offer</div><div class="v">${conv(A.funnel[2].n, A.funnel[1].n)}</div><div class="s">Houses that drew a written offer</div></div>
+          <div class="tile"><div class="k">Offer → transfer</div><div class="v">${conv(A.funnel[3].n, A.funnel[2].n)}</div><div class="s">Offers that opened a deal room</div></div>
+          <div class="tile"><div class="k">Transfer → registered</div><div class="v">${conv(A.funnel[4].n, A.funnel[3].n)}</div><div class="s">Reached the Deeds Office</div></div>
+        </div>
+        ${A.offBook.length ? `<div class="note" style="margin-top:14px">${ICON.deals}<div><b>${A.offBook.length} of the ${A.deals.length} deal rooms are not in that chain.</b> They came in as a signed offer on a house that was never on these books — another agent's mandate, a private seller, a buyer who walked in. Real income, but it is not something the prospecting above produced, so counting it there would flatter every rate on this screen.</div></div>` : ""}
+        ${!A.cards.length ? `<div class="note" style="margin-top:14px">${ICON.board}<div><b>No leads are being counted.</b> A lead is a card on a prospecting board carrying an owner and a number — the kind that comes across in a Trello import. Until a board like that is here, the first row stays at nought and the conversion from it means nothing.
+          <button class="btn btn-s" data-act="view" data-v="board" style="margin-left:8px">Open the board</button></div></div>` : ""}
+        <p style="margin:12px 0 0;font-size:11.5px;color:var(--t3)">Each row is a true subset of the one above it, counted on the houses this agency holds the mandate on. It is a snapshot of everything on the books, not one month's intake followed through, so the rates tell you where the work drops away — not how a single month performed.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-h">${ICON.team}<h2>Each agent</h2><span class="chip c-mute">${A.agents.length}</span></div>
+      <div class="tblwrap"><table>
+        <thead><tr><th>Agent</th><th>Leads</th><th>Mandates</th><th>Offers</th><th>In transfer</th><th>Registered</th><th>Lead → sale</th>${money ? "<th>Pipeline</th><th>Banked</th>" : ""}<th>Last worked</th><th></th></tr></thead>
+        <tbody>${A.agents.map(a => `<tr>
+          <td><span class="who-cell">${avatar(a.id, 26)}<b>${P[a.id].name}</b>${a.risk ? ` <span class="chip c-stop">${a.risk}</span>` : ""}</span></td>
+          <td class="num">${a.leads || "—"}</td>
+          <td class="num">${a.mandates || "—"}</td>
+          <td class="num">${a.offers || "—"}</td>
+          <td class="num">${a.live || "—"}</td>
+          <td class="num">${a.registered || "—"}</td>
+          <td class="num">${conv(a.sales, a.leads)}</td>
+          ${money ? `<td class="num">${a.pipeline ? Rm(a.pipeline) : "—"}</td><td class="num">${a.banked ? Rm(a.banked) : "—"}</td>` : ""}
+          <td>${a.last ? `<span style="font-size:12px;color:${(Date.now() - new Date(a.last)) / DAY > 14 ? "var(--stop)" : "var(--t2)"}">${ago(a.last)}</span>` : `<span class="chip c-mute">nothing yet</span>`}</td>
+          <td><button class="btn btn-s" data-act="filter" data-p="${a.id}">See deals</button></td>
+        </tr>`).join("")}</tbody>
+      </table></div>
+      <div class="card-b" style="padding-top:0"><p style="margin:10px 0 0;font-size:11.5px;color:var(--t3)">Lead → sale is deal rooms opened against leads worked, so it only means something for an agent whose prospecting is on a board here. <b>Last worked</b> turns red after a fortnight of nothing — on any file, house or card.</p></div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-h">${ICON.track}<h2>Where the work is sitting</h2></div>
+        <div class="card-b">
+          <div class="chart">${A.byStage.map(b => `
+            <button class="crow" data-empty="${b.n ? 0 : 1}" data-tiptitle="${esc(b.s.n + ". " + b.s.name)}"
+              data-tip="${esc(b.n ? b.deals.map(d => `${d.meta.address} — ${P[d.meta.agent].name.split(" ")[0]}`).join(" • ") : "No files at this stage")}">
+              <span class="cl">${b.s.n}. ${b.s.name}</span>
+              <span class="cbar"><i style="width:${b.n / smax * 100}%"></i></span>
+              <span class="cv">${b.n}</span></button>`).join("")}</div>
+          <p style="margin:12px 0 0;font-size:12px;color:var(--t2)">A stack building up at one stage is where the agency is losing weeks${money ? `. The ${A.byStage.filter(b => b.n).sort((x, y) => y.value - x.value)[0] ? `heaviest is ${Rm(A.byStage.filter(b => b.n).sort((x, y) => y.value - x.value)[0].value)} sitting at ${A.byStage.filter(b => b.n).sort((x, y) => y.value - x.value)[0].s.name.toLowerCase()}` : ""}` : ""}.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-h">${ICON.log}<h2>What each stage takes you</h2><span class="chip c-mute">your own files</span></div>
+        <div class="tblwrap"><table>
+          <thead><tr><th>Stage</th><th>You</th><th>Usually</th><th>Files</th></tr></thead>
+          <tbody>${A.stageTook.map(x => `<tr>
+            <td style="font-size:12.5px">${x.s.n}. ${x.s.name}</td>
+            <td class="num">${x.days === null ? "—" : x.days + "d"}</td>
+            <td style="font-size:11.5px;color:var(--t3)">${x.s.days}</td>
+            <td class="num" style="color:var(--t3)">${x.n || "—"}</td>
+          </tr>`).join("")}</tbody>
+        </table></div>
+        <div class="card-b" style="padding-top:0"><p style="margin:10px 0 0;font-size:11.5px;color:var(--t3)">The middle column is the median of your own completed stages; the next is what the step normally runs in South Africa. Where yours is well over, that is the conversation to have with the attorney.</p></div>
+      </div>
+    </div>
+
+    ${money ? `<div class="card">
+      <div class="card-h">${ICON.key}<h2>Earnings</h2><span class="chip c-mute">${A.ty}/${String(A.ty + 1).slice(2)} tax year</span></div>
+      <div class="card-b">
+        <div class="chart">${A.agents.map(a => `
+          <button class="crow" data-empty="${a.banked ? 0 : 1}" data-tiptitle="${esc(P[a.id].name)}"
+            data-tip="${esc(a.banked ? `${R(a.banked)} banked on ${a.registered} registration${a.registered === 1 ? "" : "s"}` : "Nothing banked this tax year")}">
+            <span class="cl">${esc(P[a.id].name)}</span>
+            <span class="cbar"><i style="width:${a.banked / emax * 100}%"></i></span>
+            <span class="cv">${a.banked ? Rm(a.banked) : "—"}</span></button>`).join("")}</div>
+        <div class="tiles" style="margin-top:14px">
+          <div class="tile"><div class="k">The agency kept</div><div class="v">${Rm(A.house)}</div><div class="s">Its own share of every registered file</div></div>
+          <div class="tile"><div class="k">Paid to agents</div><div class="v">${Rm(A.toAgents)}</div><div class="s">${A.house + A.toAgents > 0 ? Math.round(A.toAgents / (A.house + A.toAgents) * 100) + "% of the net fee" : "nothing yet"}</div></div>
+          <div class="tile"><div class="k">Average sale</div><div class="v">${A.done.length ? Rm(A.soldValue / A.done.length) : "—"}</div><div class="s">Across ${A.done.length} registered</div></div>
+        </div>
+        <p style="margin:12px 0 0;font-size:11.5px;color:var(--t3)">Commission is counted when it is paid out on registration, never when an offer is signed — a file that lapses was never income. VAT is not in these figures; it was never the agency's.</p>
+      </div>
+    </div>` : ""}
+
+    <div class="card">
+        <div class="card-h">${ICON.tag}<h2>Where the business comes from</h2></div>
+        <div class="card-b">
+          ${A.sources.length ? `<div class="tblwrap"><table>
+            <thead><tr><th>Source</th><th>Mandates</th><th>Sales</th>${money ? "<th>Banked</th>" : ""}</tr></thead>
+            <tbody>${A.sources.map(x => `<tr><td style="font-size:12.5px">${esc(x.k)}</td>
+              <td class="num">${x.mandates || "—"}</td><td class="num">${x.sales || "—"}</td>
+              ${money ? `<td class="num">${x.banked ? Rm(x.banked) : "—"}</td>` : ""}</tr>`).join("")}</tbody>
+          </table></div>` : `<div class="empty"><b>Nothing to show yet</b>A source is picked on each house and each deal room. Once a few carry one, this becomes the only honest answer to "where should we spend the marketing money".</div>`}
+          ${A.noSource ? `<div class="note" style="margin-top:12px">${ICON.warn}<div><b>${A.noSource} file${A.noSource === 1 ? " has" : "s have"} no source recorded.</b> Whatever is spent on getting that work cannot be measured against what it brought back. It is one field on the house and on the deal room.</div></div>` : ""}
+        </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-h">${ICON.house}<h2>Where you sell</h2></div>
+        <div class="card-b">
+          ${A.areas.length ? `<div class="chart">${A.areas.slice(0, 8).map(x => `
+            <button class="crow" data-tiptitle="${esc(x.k)}" data-tip="${esc(`${x.n} file${x.n === 1 ? "" : "s"}${money ? " · " + Rm(x.value) : ""}`)}">
+              <span class="cl">${esc(x.k)}</span>
+              <span class="cbar"><i style="width:${x.value / A.areas[0].value * 100}%"></i></span>
+              <span class="cv">${x.n}</span></button>`).join("")}</div>
+          <p style="margin:12px 0 0;font-size:11.5px;color:var(--t3)">By value of the files opened there. ${A.areas.length === 1 ? "Every sale is in one suburb." : `${Math.round(A.areas[0].value / A.areas.reduce((n, x) => n + x.value, 0) * 100)}% of it is ${esc(A.areas[0].k)} — a good thing while that suburb is selling, and the whole risk when it stops.`}</p>` : `<div class="empty"><b>No files yet</b>This fills in as deal rooms open.</div>`}
+        </div>
+      </div>
+    </div>
+
+    ${A.expiring.length ? `<div class="card">
+      <div class="card-h">${ICON.warn}<h2>Mandates running out</h2><span class="chip ${A.expiring.some(x => x.n < 0) ? "c-stop" : "c-wait"}">${A.expiring.length}</span></div>
+      <div class="card-b">${A.expiring.slice(0, 8).map(({ l, n }) => `<div class="act">
+        <span class="stripe" style="background:${n < 0 ? "var(--stop)" : "var(--wait)"}"></span>
+        <div class="act-t"><b>${esc(l.meta.address)}, ${esc(l.meta.area)}</b>
+          <span>${P[l.meta.agent].name.split(" ")[0]} · ${n < 0 ? `lapsed ${Math.abs(n)} days ago` : n === 0 ? "ends today" : `ends in ${n} days`} · ${dstr(l.mandateEnds)}${money ? " · " + Rm(l.meta.price) : ""}</span></div>
+        <button class="btn btn-s" data-act="openhouse" data-l="${l.meta.id}">Open</button>
+      </div>`).join("")}
+        <p style="margin:10px 0 0;font-size:11.5px;color:var(--t3)">A sole mandate that lapses is stock walking out of the door. These are the calls to make this week.</p>
+      </div>
+    </div>` : ""}
+
+    ${A.attention.length ? `<div class="card">
+      <div class="card-h" style="color:var(--stop)">${ICON.warn}<h2 style="color:var(--t1)">Files that have stopped moving</h2><span class="chip c-stop">${A.attention.length}</span></div>
+      <div class="card-b">
+        ${money ? `<p style="margin:0 0 12px;font-size:12px;color:var(--t2)"><b style="color:var(--t1)">${Rm(A.attention.reduce((n, d) => n + d.meta.price, 0))}</b> of property is sitting in these, and about <b style="color:var(--t1)">${Rm(A.attention.reduce((n, d) => n + commCalc(d).net, 0))}</b> of fee behind them.</p>` : ""}
+        ${A.attention.slice(0, 8).map(d => { const br = bondRisk(d);
+          return `<div class="act">
+            <span class="stripe" style="background:var(--stop)"></span>
+            <div class="act-t"><b>${esc(d.meta.address)}, ${esc(d.meta.area)}</b>
+              <span>${P[d.meta.agent].name.split(" ")[0]} · ${br !== null && br < 7 ? (br < 0 ? `bond condition lapsed ${Math.abs(br)} days ago` : `bond condition due in ${br} days`) : `nothing for ${Math.round((Date.now() - new Date(lastTouch(d))) / DAY)} days`} · stage ${current(d).n}</span></div>
+            <button class="btn btn-s" data-act="open" data-d="${d.meta.id}">Open file</button>
+          </div>`; }).join("")}
+      </div>
+    </div>` : ""}
+
+    <div class="note">${ICON.shield}<div><b>What these numbers are, and are not.</b> Every figure here is counted off the files the team has made — nothing is typed in, and nothing is estimated except <b>Still to come</b>, which weights each live file by how far it has come${A.cards.length ? "" : ", and the lead row, which is empty because no prospecting board has been brought across"}. The app cannot see a lead that was never written down, a viewing nobody logged, or a sale done outside it. What it measures, it measures honestly; what it has not been told, it leaves blank rather than guessing.${money ? " Commission is the principal's to see — an admin sees these counts without the rands, and no agent, client or attorney sees this screen at all." : ""}</div></div>
+  </div>`;
+}
+
 function vTeam(){
   const all = Object.values(S.deals), active = all.filter(d => !isClosed(d));
   const byStage = STAGES.map(s => ({ s, deals:active.filter(d => current(d).n === s.n) }));
@@ -3456,7 +3841,7 @@ function vMoney(){
 
 /* ══ Render ═════════════════════════════════════════════════════════ */
 let lastWhere = "";
-const RENDER = { staff:vStaff, guide:vGuide, cal:vCalendar, today:vToday, money:vMoney, comm:vComm, docs:vDocs, road:vRoad, earn:vEarn, board:vBoard, portfolio:vPortfolio, team:vTeam, new:vNew, listings:vListings, house:vHouse, dash:vDash, track:vTrack, vault:vVault, chat:vChat, people:vPeople, log:vLog };
+const RENDER = { agency:vAgency, staff:vStaff, guide:vGuide, cal:vCalendar, today:vToday, money:vMoney, comm:vComm, docs:vDocs, road:vRoad, earn:vEarn, board:vBoard, portfolio:vPortfolio, team:vTeam, new:vNew, listings:vListings, house:vHouse, dash:vDash, track:vTrack, vault:vVault, chat:vChat, people:vPeople, log:vLog };
 function render(){
   if (sync.gate !== "in" && sync.gate !== "demo"){ renderAuth(); return; }
   document.body.classList.remove("auth");
@@ -3475,6 +3860,7 @@ function render(){
   if (!S.deal && ["dash","track","vault","chat","people","log"].includes(S.view)) S.view = homeView();
   if (S.deal && !dealViews().some(v => v.id === S.view)) S.view = "dash";
   if (!S.deal && S.view === "team" && !isPrincipal(S.me)) S.view = "portfolio";
+  if (!S.deal && S.view === "agency" && !isPrincipal(S.me)) S.view = "portfolio";
   if (S.view === "staff" && !isAdmin(S.me)) S.view = homeView();
   if (S.view === "guide" && !(me().role === "agent" || isPrincipal(S.me))) S.view = homeView();
   if (S.view === "cal" && !navItems().some(v => v.id === "cal")) S.view = homeView();

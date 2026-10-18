@@ -475,6 +475,8 @@ body.auth .shell{grid-template-columns:minmax(0,1fr);padding:0;max-width:none;ga
 .authcard .waiting{background:var(--wait-bg);color:var(--wait);border-radius:10px;padding:13px 14px;font-size:12.5px;line-height:1.55;text-align:left;margin-bottom:16px}
 .authcard .err{background:var(--stop-bg);color:var(--stop);border-radius:10px;padding:11px 13px;font-size:12px;line-height:1.5;text-align:left;margin-bottom:14px;word-break:break-word}
 .authcard .who{font-size:12.5px;color:var(--t2);margin-bottom:16px}
+.authcard .link{background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:10px 12px;
+  font-size:12px;color:var(--t1);word-break:break-all;text-align:left;margin-bottom:10px;user-select:all}
 .spin{width:26px;height:26px;border-radius:50%;border:2.5px solid var(--line);border-top-color:var(--gold);margin:6px auto 0;animation:sp .7s linear infinite}
 @keyframes sp{to{transform:rotate(360deg)}}
 
@@ -3513,9 +3515,15 @@ function renderAuth(){
         <div class="who">Signed in as <b style="color:var(--t1)">${esc(who.email || "")}</b></div>
         <button class="btn" data-act="syncout">Sign out</button>`
     : `<p class="sub">One place for every house you are marketing and every sale in transfer — shared with the people who need it, and nobody else.</p>
+        ${inAppBrowser() ? `<div class="waiting"><b>Open this in your own browser.</b><br>
+          You have opened the link inside another app — WhatsApp, Facebook and the rest show web pages in a small browser of their own, and Google refuses to sign anyone in from one. Nothing is wrong with your account.<br><br>
+          Tap the <b>⋮</b> menu at the top of this screen and choose <b>Open in Chrome</b> (on an iPhone, <b>Open in Safari</b>). Or copy the address and paste it into Chrome yourself.</div>
+          <div class="link mono">${esc(appLink())}</div>
+          <button class="btn" data-act="copyapp" style="margin-bottom:10px">Copy the address</button>` : ""}
         ${sync.err ? `<div class="err"><b>Could not sign you in.</b><br>${esc(sync.err)}</div>` : ""}
-        <button class="btn btn-p gbtn" data-act="syncin">${GOOGLE_G} Sign in with Google</button>
-        <div class="fine">Use the Google account your office knows you by. Signing in says who you are; an admin decides what you may see.</div>`;
+        ${sync.needsSignIn ? `<button class="btn btn-p gbtn" data-act="syncin">${GOOGLE_G} Sign in with Google</button>`
+          : `<button class="btn btn-p" data-act="syncretry">Try again</button>`}
+        <div class="fine">Use the Google account your office knows you by. Signing in says who you are; an admin decides what you may see.${inAppBrowser() ? "" : `<br><br>Nothing happening? The address is <span class="mono" style="word-break:break-all">${esc(appLink())}</span> — it works best in Chrome or Safari.`}</div>`;
   document.getElementById("view").innerHTML = `<div class="authwrap"><div class="authcard">
     <img class="lockup" style="height:auto;width:236px;margin:0 auto 6px" src="data:image/png;base64,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" alt="RB Brand Real Estate">
     <div class="wordsub" style="margin-bottom:20px">Deal Room</div>${body}</div></div>`;
@@ -3982,6 +3990,11 @@ document.addEventListener("click", e => {
   }
   else if (a === "cdelete"){ if (!confirm("Delete this card?")) return;
     S.board.cards = S.board.cards.filter(x => x.id !== S.card.id); closeCard(); toast("Card deleted"); render(); }
+  else if (a === "copyapp"){ const t = appLink();
+    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(() => toast("Address copied — paste it into Chrome"))
+      .catch(() => { const el = document.querySelector(".authcard .link"); if (el){ const r = document.createRange(); r.selectNodeContents(el);
+        const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); } toast("Press and hold the address to copy it"); }); }
+  else if (a === "syncretry"){ sync.err = ""; sync.gate = "checking"; render(); gateWatchdog(); startSync(); }
   else if (a === "syncin"){ syncSignIn(); }
   else if (a === "syncout"){ syncSignOut(); }
   else if (a === "rosterrole"){ const x = S.staff.find(y => y.as === btn.dataset.p), sel = document.querySelector(`[data-role="r:${btn.dataset.p}"]`);
@@ -4384,6 +4397,26 @@ const SYNC_KINDS = { cards:"card", deals:"deal", listings:"listing", boards:"boa
    nothing of the agency's work until Google says who you are and an admin
    has let you in. With no project (the preview) it opens on the demo. */
 const HAS_PROJECT = () => !!(window.RB_CONFIG && window.RB_CONFIG.firebase && window.RB_CONFIG.firebase.projectId);
+/* Nothing here may wait forever. A phone on a weak signal, or a browser
+   that blocks the storage Firebase keeps a session in, can leave a
+   promise that never settles and never fails — and the page sits on
+   "Just a moment…" with a spinner, which tells the person nothing. Every
+   wait below is bounded, and a wait that runs out is an ordinary error
+   with something to read. */
+const bounded = (promise, ms, what) => Promise.race([promise,
+  new Promise((_, rej) => setTimeout(() => rej(new Error(what)), ms))]);
+/* Google will not sign anyone in from inside another app's browser —
+   WhatsApp, Facebook, Instagram and LinkedIn all open links in their
+   own, and Google answers those with "disallowed_useragent". The page
+   cannot escape one on its own, so it says so and hands over the
+   address instead of failing silently. */
+function inAppBrowser(){
+  const u = navigator.userAgent || "";
+  if (/FBAN|FBAV|FB_IAB|Instagram|LinkedInApp|Line\/|Snapchat|Pinterest|MicroMessenger|WhatsApp/i.test(u)) return true;
+  if (/; wv\)/.test(u)) return true;                                   // an Android WebView says so outright
+  if (/iPhone|iPad|iPod/i.test(u) && !/Safari|CriOS|FxiOS|EdgiOS/i.test(u)) return true;
+  return false;
+}
 let sync = { on:false, status:"local", gate:"demo", db:null, ws:null, uid:null, pending:{}, timer:null, applying:false };
 
 /* Each entity is one document, so two people editing different cards never
@@ -4428,12 +4461,18 @@ async function startSync(){
   syncStatus("connecting");
   try {
     const V = "https://www.gstatic.com/firebasejs/12.16.0/";
-    const [{ initializeApp }, auth, fs] = await Promise.all([
-      import(V + "firebase-app.js"), import(V + "firebase-auth.js"), import(V + "firebase-firestore.js")]);
+    const [{ initializeApp }, auth, fs] = await bounded(Promise.all([
+      import(V + "firebase-app.js"), import(V + "firebase-auth.js"), import(V + "firebase-firestore.js")]),
+      15000, "Could not reach the sign-in service. Check that you are online and try again.");
     const app = initializeApp(cfg);
     const A = auth.getAuth(app);
-    const user = A.currentUser || await new Promise(res => auth.onAuthStateChanged(A, res));
     sync.auth = { auth, A };
+    /* Coming back from a sign-in that left the page (a phone, where a
+       popup is no use) — this is where that trip lands. */
+    await auth.getRedirectResult(A).catch(err => { console.warn("redirect", err); sync.err = signInWhy(err); });
+    const user = A.currentUser || await bounded(
+      new Promise(res => auth.onAuthStateChanged(A, res, () => res(null))),
+      8000, "This browser would not let the app check whether you are signed in. Open the page in Chrome or Safari.");
     if (!user){ syncStatus("local"); sync.needsSignIn = { auth, A }; if (sync.gate === "checking") sync.gate = "signin"; render(); return; }
     sync.uid = user.uid; sync.user = { name:user.displayName || "", email:user.email || "" };
     sync.db = fs.getFirestore(app); sync.fs = fs;
@@ -4550,24 +4589,50 @@ async function syncSignOut(){
   try { await sync.auth.auth.signOut(sync.auth.A); } catch {}
   location.reload();
 }
+function signInWhy(err){
+  const c = (err && err.code || "").replace("auth/", "");
+  const m = err && err.message || "";
+  if (c === "popup-closed-by-user" || c === "cancelled-popup-request") return "The sign-in window closed before it finished. Try again.";
+  if (c === "unauthorized-domain") return "This web address is not on the project's list of allowed domains yet.";
+  if (c === "popup-blocked") return "Your browser blocked the sign-in window. Trying again without one.";
+  if (/disallowed_useragent/i.test(m)) return "Google will not sign you in from inside another app's browser. Open this page in Chrome or Safari.";
+  if (c === "network-request-failed") return "No connection to the sign-in service. Check your signal and try again.";
+  return m || "Something went wrong.";
+}
+/* A popup is the better sign-in where it works, and useless where it
+   does not: phones block them, and some browsers have no second window
+   to give. Falling back to a redirect costs the page a reload and
+   nothing else, so a blocked popup is never a dead end. */
 async function syncSignIn(){
   if (!sync.needsSignIn) return;
   const { auth, A } = sync.needsSignIn;
-  try { sync.err = ""; await auth.signInWithPopup(A, new auth.GoogleAuthProvider()); location.reload(); }
+  const provider = () => { const g = new auth.GoogleAuthProvider(); g.setCustomParameters({ prompt:"select_account" }); return g; };
+  sync.err = "";
+  try { await auth.signInWithPopup(A, provider()); location.reload(); return; }
   catch (err){
     console.warn(err);
     const c = (err && err.code || "").replace("auth/", "");
-    sync.err = c === "popup-closed-by-user" || c === "cancelled-popup-request" ? "The sign-in window closed before it finished. Try again."
-      : c === "unauthorized-domain" ? "This web address is not on the project's list of allowed domains yet."
-      : c === "popup-blocked" ? "Your browser blocked the sign-in window. Allow pop-ups for this page and try again."
-      : (err && err.message) || "Something went wrong.";
-    render();
+    const retry = ["popup-blocked", "operation-not-supported-in-this-environment", "web-storage-unsupported", "internal-error"];
+    if (!retry.includes(c)){ sync.err = signInWhy(err); render(); return; }
+    try { await auth.signInWithRedirect(A, provider()); }         // leaves the page; comes back through getRedirectResult
+    catch (err2){ console.warn(err2); sync.err = signInWhy(err2); render(); }
   }
 }
 
 if (HAS_PROJECT()) sync.gate = "checking";
 render();
 startSync();
+/* startSync bounds every wait it makes, but it cannot bound a browser
+   that stops running it. If the gate is still closed after twenty
+   seconds, open the sign-in page anyway: a button that might not work
+   beats a spinner that certainly does not. */
+const gateWatchdog = () => setTimeout(() => {
+  if (sync.gate !== "checking") return;
+  sync.gate = "signin";
+  if (!sync.err) sync.err = "The sign-in service did not answer. Check your signal, or open this page in Chrome or Safari.";
+  render();
+}, 20000);
+gateWatchdog();
 
 /* ══ The phone app ══════════════════════════════════════════════════
    Served from a folder, this installs to the home screen and keeps

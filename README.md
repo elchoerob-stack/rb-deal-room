@@ -36,6 +36,14 @@ at the Deeds Office.
   both ways
 - **Staff & access** — an admin's screen: who is waiting to be let in, who has
   access and at what level, and the roster the app knows as the team
+- **The work** — the principal's other screen, and the one that moves first.
+  The agency screen counts results, which arrive months after the effort that
+  caused them. This counts the effort: calls logged, houses canvassed,
+  viewings held, people through a show day, mandates won, offers written,
+  clients messaged — per agent, over a week, a month or a quarter, against the
+  same span before it. Plus twelve weeks of the whole agency, the call-backs
+  that have gone past their date, and the prospects nobody has touched in a
+  month. It counts only what was written down, and says so
 - **The agency** — the principal's numbers: how many agents, the funnel from a
   name on a prospecting board through to a registered sale with the conversion
   at each step, every agent's leads, mandates, offers, transfers and earnings,
